@@ -1,12 +1,28 @@
-<h1>Entries</h1>
-
-<div id="entries">
-  <% @entries.each do |entry| %>
-    <%= render entry %>
-    <p>
-      <%= link_to "Show this entry", entry %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New entry", new_entry_path %>
+<% content_for :title do %>
+Foodlog &ndash; <%= DateTime.now %>
+<%end%>
+<div class ="columns mt-6 is-centered">
+    <% @entries.each do |entry| %>
+    <div class = "column is-one-quarter">
+        <div class = "card"> 
+          <header class = "card-header">
+            <p class = "card-header-title"> <%=entry.meal_type%> </p>
+          </header>
+          <div class = "card-content">
+            <div class = "content">
+              <p><span class = "has-text-weight-bold"> <%=entry.calories %></span> Calories </p>
+              <p><span class = "has-text-weight-bold"> <%=entry.proteins %></span>g Protein </p>
+              <p><span class = "has-text-weight-bold"> <%=entry.carbs %></span>g Carbs </p>
+             <p><span class = "has-text-weight-bold"> <%=entry.fats %></span>g Fats </p>
+             <p class = "italic"> Logged at: <%= time_ago_in_words(entry.created_at) %>
+            </div>
+          </div>
+          <div class = "card-footer">
+            <%= link_to "View", entry, class: "card-footer-item" %>
+            <%= link_to "Edit", edit_entry_path(entry), class: "card-footer-item" %>
+            <%= link_to "Delete", method: :delete, data: { confirm: 'Are you sure?' },class: "card-footer-item"%>
+          </div>
+        </div>
+      </div>
+     <% end %>
+    </div>
