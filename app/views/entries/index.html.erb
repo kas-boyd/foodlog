@@ -14,13 +14,13 @@ Foodlog &ndash; <%= DateTime.now %>
               <p><span class = "has-text-weight-bold"> <%=entry.proteins %></span>g Protein </p>
               <p><span class = "has-text-weight-bold"> <%=entry.carbs %></span>g Carbs </p>
              <p><span class = "has-text-weight-bold"> <%=entry.fats %></span>g Fats </p>
-             <p class = "italic"> Logged at: <%= time_ago_in_words(entry.created_at) %>
+             <p class = "italic"> Logged at: <%= time_ago_in_words(entry.created_at) %> ago </p>
             </div>
           </div>
           <div class = "card-footer">
             <%= link_to "View", entry, class: "card-footer-item" %>
             <%= link_to "Edit", edit_entry_path(entry), class: "card-footer-item" %>
-            <%= link_to "Delete", method: :delete, data: { confirm: 'Are you sure?' },class: "card-footer-item"%>
+            <p class = "card-footer-item"> <%= link_to "Delete", entry, method: :delete, data: { confirm: "Are you sure?" }%> </p>
           </div>
         </div>
       </div>
