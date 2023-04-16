@@ -1,4 +1,4 @@
-This project is done following an API builder blog from web-crunch.com https://www.youtube.com/watch?v=B3Fbujmgo60&t=408s
+This project is done following a tutorial from web-crunch.com https://www.youtube.com/watch?v=B3Fbujmgo60&t=408s
 
 This application allows a user to log their meals along with macro nutrients. The app functionality includes:
 - Adding a new food entry which includes meal type, calories, protein, carbs, fats.
@@ -14,7 +14,14 @@ Stack
 
 In order to run this on your local
 
+<<<<<<< HEAD
 - Clone
 - Run bundle
 - Run rails server
 - Open localhost:3000
+=======
+Clone
+Run command bundle install to install the ruby gems
+Run command rails s to run the rails server
+Open localhost:3000
+>>>>>>> 3fe132a4124fdb9c53143541c6778ebfb009ff0d
