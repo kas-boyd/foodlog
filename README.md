@@ -7,13 +7,14 @@ This application allows a user to log their meals along with macro nutrients. Th
 - View all entries by day
 - View an entire day's total macro nutrients
 
-Ruby 2.7.0
-Rails 7.0.4.2
-Bulma
+Stack
+- Ruby 2.7.0
+- Rails 7.0.4.2
+- Bulma
 
 In order to run this on your local
 
-Clone
-Run command bundle install to install the ruby gems
-Run command rails s to run the rails server
-Open localhost:3000
+- Clone
+- Run bundle
+- Run rails server
+- Open localhost:3000
