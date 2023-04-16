@@ -14,14 +14,7 @@ Stack
 
 In order to run this on your local
 
-<<<<<<< HEAD
 - Clone
 - Run bundle
 - Run rails server
 - Open localhost:3000
-=======
-Clone
-Run command bundle install to install the ruby gems
-Run command rails s to run the rails server
-Open localhost:3000
->>>>>>> 3fe132a4124fdb9c53143541c6778ebfb009ff0d
