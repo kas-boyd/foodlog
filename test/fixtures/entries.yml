@@ -13,3 +13,10 @@ lunch:
   proteins: 45
   carbs: 50
   fats: 15
+
+dinner:
+  meal_type: "dinner"
+  calories: 600
+  proteins: 45
+  carbs: -5
+  fats: 15
