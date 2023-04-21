@@ -1,14 +1,26 @@
-<p style="color: green"><%= notice %></p>
+<% content_for :title do %>
+Goals &ndash; <%= DateTime.now.to_formatted_s(:nice_date) %>
+<%end%>
 
-<h1>Goals</h1>
+<div class ="columns mt-6 is-centered">
+    <% @goals.each do |goal| %>
+    <div class = "column is-one-quarter">
+        <div class = "card"> 
+          <header class = "card-header">
+            <p class = "card-header-title"> Calorie Goal for <%= goal.created_at.to_formatted_s(:nice_date) %> </p>
+          </header>
+          <div class = "card-content">
+            <div class = "content">
+              <p><span class = "has-text-weight-bold"> <%=goal.calorie_goal %></span> Calories </p>
+            </div>
+          </div>
+          <div class = "card-footer">
+            <%= link_to "Edit", edit_goal_path(goal), class: "card-footer-item" %>
+            <p class = "card-footer-item"> <%= link_to "Delete", goal, method: :delete, data: { confirm: "Are you sure?" }%> </p>
+          </div>
+        </div>
+      </div>
+     <% end %>
+    </div>
 
-<div id="goals">
-  <% @goals.each do |goal| %>
-    <%= render goal %>
-    <p>
-      <%= link_to "Show this goal", goal %>
-    </p>
-  <% end %>
-</div>
 
-<%= link_to "New goal", new_goal_path %>
