@@ -1,0 +1,24 @@
+<%= form_with(model: goal) do |form| %>
+  <% if goal.errors.any? %>
+   <div class="message is-danger">
+      <div class="message is-header">
+        <p><%= pluralize(entry.errors.count, "error") %> prohibited this entry from being saved:</p>
+      </div>
+      <div class = "message-body">
+      <ul>
+        <% goal.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class = "field">
+    <%= form.label :calorie_goal, class: "label" %>
+    <%= form.number_field :calorie_goal, class: "input" %>
+  </div>
+
+ <div class ="actions">
+    <%= form.submit class: "button is-success"%>
+  </div>
+<% end %>

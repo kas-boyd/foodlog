@@ -1,0 +1,31 @@
+<% content_for :title do %>
+Goals &ndash; <%= DateTime.now.to_formatted_s(:nice_date) %>
+<%end%>
+
+<div class ="columns mt-6 is-centered">
+    <% @goals.each do |goal, entries| %>
+    <div class = "column is-one-quarter">
+        <div class = "card"> 
+          <header class = "card-header">
+            <p class = "card-header-title"> Calorie Goal for <%= goal.created_at.to_formatted_s(:nice_date) %> </p>
+          </header>
+          <div class = "card-content">
+            <div class = "content">
+              <p><span class = "has-text-weight-bold"> <%=goal.calorie_goal %></span> Calories </p>
+              <% if goal.goal_met == false %> 
+                <p><span class = "has-text-weight-bold has-text-danger"> Goal Not Met </span></p>
+              <% else %>
+                <p><span class = "has-text-weight-bold has-text-primary"> Goal Was Met </span></p>
+              <% end %>
+            </div>
+          </div>
+          <div class = "card-footer">
+            <%= link_to "Edit", edit_goal_path(goal), class: "card-footer-item" %>
+            <p class = "card-footer-item"> <%= link_to "Delete", goal, method: :delete, data: { confirm: "Are you sure?" }%> </p>
+          </div>
+        </div>
+      </div>
+     <% end %>
+    </div>
+
+
