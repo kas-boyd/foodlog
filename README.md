@@ -6,6 +6,11 @@ This application allows a user to log their meals along with macro nutrients. Th
 - Delete an existing entrie
 - View all entries by day
 - View an entire day's total macro nutrients
+- Add a calorie goal from the index page
+- the goal should be a number
+- the goal should be for a day
+- the goals should be saved and accessible
+- the archives should show if the goal was met
 
 Stack
 - Ruby 2.7.0
@@ -20,10 +25,5 @@ In order to run this on your local
 - Open localhost:3000
 
 Upcoming Functionality
-- Add a calorie goal from the index page
-- the goal should be a number
-- the goal should be for a day
-- the goals should be saved and accessible
-- the archives should show if the goal was met
 - the goal should be updated to "met" if the goal calories are <= the entry calories for the same day
 - a new goal should not be added if the created date already exists
