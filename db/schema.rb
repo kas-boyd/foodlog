@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_20_022240) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_21_174344) do
   create_table "entries", force: :cascade do |t|
     t.string "meal_type"
     t.integer "calories"
@@ -25,6 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_20_022240) do
     t.integer "calorie_goal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "goal_met", default: false
   end
 
 end

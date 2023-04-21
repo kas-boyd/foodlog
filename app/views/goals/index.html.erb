@@ -3,7 +3,7 @@ Goals &ndash; <%= DateTime.now.to_formatted_s(:nice_date) %>
 <%end%>
 
 <div class ="columns mt-6 is-centered">
-    <% @goals.each do |goal| %>
+    <% @goals.each do |goal, entries| %>
     <div class = "column is-one-quarter">
         <div class = "card"> 
           <header class = "card-header">
@@ -12,6 +12,11 @@ Goals &ndash; <%= DateTime.now.to_formatted_s(:nice_date) %>
           <div class = "card-content">
             <div class = "content">
               <p><span class = "has-text-weight-bold"> <%=goal.calorie_goal %></span> Calories </p>
+              <% if goal.goal_met == false %> 
+                <p><span class = "has-text-weight-bold has-text-danger"> Goal Not Met </span></p>
+              <% else %>
+                <p><span class = "has-text-weight-bold has-text-primary"> Goal Was Met </span></p>
+              <% end %>
             </div>
           </div>
           <div class = "card-footer">
