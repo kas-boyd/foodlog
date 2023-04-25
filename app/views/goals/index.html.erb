@@ -3,7 +3,7 @@ Goals &ndash; <%= DateTime.now.to_formatted_s(:nice_date) %>
 <%end%>
 
 <div class ="columns mt-6 is-centered">
-    <% @goals.each do |goal, entries| %>
+    <% @goals.each do |goal| %>
     <div class = "column is-one-quarter">
         <div class = "card"> 
           <header class = "card-header">
