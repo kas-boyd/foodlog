@@ -25,5 +25,6 @@ In order to run this on your local
 - Open localhost:3000
 
 Upcoming Functionality
+- when viewing all entries, the calorie goal should be viewable from the entry day
 - the goal should be updated to "met" if the goal calories are <= the entry calories for the same day
 - a new goal should not be added if the created date already exists
