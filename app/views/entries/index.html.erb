@@ -27,5 +27,6 @@ Foodlog &ndash; <%= DateTime.now.to_formatted_s(:nice_date) %>
      <% end %>
     </div>
     <div class = "columns mt-6 is-centered">
-      <%=link_to "View all entries", archives_index_path, class: "button is-link is-outline is-center"%>
+      <%=link_to "View all entries", archives_index_path, class: "button is-link is-outline is-center mx-2"%>
+      <%=link_to "View all goals", goals_path, class: "button is-link is-outline is-center mx-2"%>
     </div>
