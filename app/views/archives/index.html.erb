@@ -1,9 +1,5 @@
 <div class ="columns mt-6 is-centered">
   <div class ="column is-half">
-    <% @goals.each do | goal | %>
-        <%=goal.calorie_goal%>
-    <%end%>
-
      <% @entries.each do |day, entries| %>
         <h3 class = "is-size-4 has-text-weight-bold mb-4 mt-2 has-text-centered"> Entries for <%= day %> </h3> 
         <nav class="level is-mobile">
@@ -46,6 +42,7 @@
         <%end%>
     <%end%>
 <%end%>
+
     </div>
   </div>
 
