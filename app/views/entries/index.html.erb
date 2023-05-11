@@ -1,32 +1,40 @@
 <% content_for :title do %>
 Foodlog &ndash; <%= DateTime.now.to_formatted_s(:nice_date) %>
 <%end%>
-<div class ="columns mt-6 is-centered">
+
+<% if @entries.empty? %>
+  <h3 class = "is-size-4 has-text-weight-bold mb-4 mt-6 has-text-centered"> There are no entries for today, add one! </h3>
+<% else %>
+  <div class ="columns mt-6 is-centered">
     <% @entries.each do |entry| %>
-    <div class = "column is-one-quarter">
-        <div class = "card"> 
-          <header class = "card-header">
-            <p class = "card-header-title"> <%=entry.meal_type%> </p>
-          </header>
-          <div class = "card-content">
-            <div class = "content">
-              <p><span class = "has-text-weight-bold"> <%=entry.calories %></span> Calories </p>
-              <p><span class = "has-text-weight-bold"> <%=entry.proteins %></span>g Protein </p>
-              <p><span class = "has-text-weight-bold"> <%=entry.carbs %></span>g Carbs </p>
-             <p><span class = "has-text-weight-bold"> <%=entry.fats %></span>g Fats </p>
-             <p class = "italic"> Logged at: <%= time_ago_in_words(entry.created_at) %> ago </p>
+      <div class = "column is-one-quarter">
+          <div class = "card"> 
+            <header class = "card-header">
+              <p class = "card-header-title"> <%=entry.meal_type%> </p>
+            </header>
+            <div class = "card-content">
+              <div class = "content">
+                <p><span class = "has-text-weight-bold"> <%=entry.calories %></span> Calories </p>
+                <p><span class = "has-text-weight-bold"> <%=entry.proteins %></span>g Protein </p>
+                <p><span class = "has-text-weight-bold"> <%=entry.carbs %></span>g Carbs </p>
+              <p><span class = "has-text-weight-bold"> <%=entry.fats %></span>g Fats </p>
+              <p class = "italic"> Logged at: <%= time_ago_in_words(entry.created_at) %> ago </p>
+              </div>
+            </div>
+            <div class = "card-footer">
+              <%= link_to "View", entry, class: "card-footer-item" %>
+              <%= link_to "Edit", edit_entry_path(entry), class: "card-footer-item" %>
+              <p class = "card-footer-item"> <%= link_to "Delete", entry, method: :delete, data: { confirm: "Are you sure?" }%> </p>
             </div>
           </div>
-          <div class = "card-footer">
-            <%= link_to "View", entry, class: "card-footer-item" %>
-            <%= link_to "Edit", edit_entry_path(entry), class: "card-footer-item" %>
-            <p class = "card-footer-item"> <%= link_to "Delete", entry, method: :delete, data: { confirm: "Are you sure?" }%> </p>
-          </div>
         </div>
-      </div>
-     <% end %>
+      <% end %>
     </div>
-    <div class = "columns mt-6 is-centered">
-      <%=link_to "View all entries", archives_index_path, class: "button is-link is-outline is-center mx-2"%>
-      <%=link_to "View all goals", goals_path, class: "button is-link is-outline is-center mx-2"%>
-    </div>
+ <% end %>
+
+<div class= "columns mt-6 is-centered">
+  <%=link_to "Create Entry", new_entry_path, class: "button is-link is-outline is-center mx-2"%>
+  <%=link_to "Create Goal", new_goal_path, class: "button is-link is-outline is-center mx-2"%>
+</div>
+    
+

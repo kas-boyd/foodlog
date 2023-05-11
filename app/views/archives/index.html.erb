@@ -1,47 +1,47 @@
 <div class ="columns mt-6 is-centered">
-  <div class ="column is-half">
-     <% @entries.each do |day, entries| %>
-        <h3 class = "is-size-4 has-text-weight-bold mb-4 mt-2 has-text-centered"> Entries for <%= day %> </h3> 
-        <nav class="level is-mobile">
-            <div class = "level-item has-text-centered">
-                <div>
-                    <p class = "heading">Calories</p>  
-                    <p class = "title"><%= entries.pluck(:calories).sum %></p>
+    <div class ="column is-half">
+        <% @entries.each do |day, entries| %>
+            <h3 class = "is-size-4 has-text-weight-bold mb-4 mt-2 has-text-centered"> Entries for <%= day %> </h3> 
+            <nav class="level is-mobile">
+                <div class = "level-item has-text-centered">
+                    <div>
+                        <p class = "heading">Calories</p>  
+                        <p class = "title"><%= entries.pluck(:calories).sum %></p>
+                    </div>
                 </div>
-            </div>
-            <div class = "level-item has-text-centered">
-                <div>
-                    <p class = "heading">Protein</p>
-                    <p class = "title"><%= entries.pluck(:proteins).sum %></p>
+                <div class = "level-item has-text-centered">
+                    <div>
+                        <p class = "heading">Protein</p>
+                        <p class = "title"><%= entries.pluck(:proteins).sum %></p>
+                    </div>
                 </div>
-            </div>
-            <div class = "level-item has-text-centered">
-                <div>
-                    <p class = "heading">Carbs</p>
-                    <p class = "title"><%= entries.pluck(:carbs).sum %></p>
+                <div class = "level-item has-text-centered">
+                    <div>
+                        <p class = "heading">Carbs</p>
+                        <p class = "title"><%= entries.pluck(:carbs).sum %></p>
+                    </div>
                 </div>
-            </div>
-            <div class = "level-item has-text-centered">
-                <div>
-                    <p class = "heading">Fats</p>
-                    <p class = "title"><%= entries.pluck(:fats).sum %></p>
+                <div class = "level-item has-text-centered">
+                    <div>
+                        <p class = "heading">Fats</p>
+                        <p class = "title"><%= entries.pluck(:fats).sum %></p>
+                    </div>
                 </div>
-            </div>
-        </nav>
-    <% entries.each do |entry| %>
-        <%= link_to entry_path(entry) do %>
-            <div class = "card">
-                <div class = "card-content">
-                    <strong><%= entry.meal_type%></strong><br/>
-                    <%= entry.calories%> Calories
-                    <%= entry.proteins %>g Protein
-                    <%= entry.carbs %>g Carbs
-                    <%= entry.fats %>g Fats
-                </div>  
-            </div>
+            </nav>
+        <% entries.each do |entry| %>
+            <%= link_to entry_path(entry) do %>
+                <div class = "card">
+                    <div class = "card-content">
+                        <strong><%= entry.meal_type%></strong><br/>
+                        <%= entry.calories%> Calories
+                        <%= entry.proteins %>g Protein
+                        <%= entry.carbs %>g Carbs
+                        <%= entry.fats %>g Fats
+                    </div>  
+                </div>
+            <%end%>
         <%end%>
     <%end%>
-<%end%>
 
     </div>
   </div>
